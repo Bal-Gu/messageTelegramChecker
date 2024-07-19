@@ -6,12 +6,12 @@ client = TelegramClient('anon', api_id, api_hash)
 
 
 # -1002121499217
-@client.on(events.NewMessage(chats=[-4259865903]))
+@client.on(events.NewMessage(chats=[-1002121499217]))
 async def handler(event):
     print(event.raw_text)
     await client.send_message(-4241808181, event.raw_text)
 
-@client.on(events.MessageEdited(chats=[-4259865903]))
+@client.on(events.MessageEdited(chats=[-1002121499217]))
 async def handler(event):
     original_message = event.original_update.message.raw_text
     await client.send_message(-4241808181, original_message)
